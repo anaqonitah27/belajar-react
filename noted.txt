@@ -1,0 +1,28 @@
+React 
+https://react.dev/learn/installation#try-react
+
+- adalah Library JS untuk membuat UI yang interaktif dan declarative
+Imperative : menuliskan langkah demi langkah untuk bagaimana sesuatu yang harus dilakukan
+Declarative : menuliskan apa yang dihasilkan
+
+- dibuat tahun 2013 oleh Jordan Walke (Engineer FB)
+- DOM (document object model)
+- dari source code ke dom lalu ke models
+
+SyntaxError: Unexpected token '<' itu bukan JSX jadinya error karena tidak bisa manggil h1
+
+JSX itu ekstensi sintaks untuk JS yang mendeskripsikan UI
+3 aturan JSX
+1. Hanya selalu mengembalikan 1 elemen saja, jika mau lebih maka kasih <> dan </>
+2. Selalu tutup semua tag dengan </>
+3. Menggunakan camelCase contoh className
+
+Props itu digunakan untuk element yang berulang tetapi ada salah satu element yg berbeda
+
+Props refactor => menggunakan destructuring, ternanry operator
+Props yang menggunakan array harus ada unique key nya
+-> errornya = Warning: Each child in a list should have a unique "key" prop.
+
+
+State dan Hooks
+Event Handler
