@@ -64,7 +64,8 @@ const AddList = () => {
             </div>
           </div>
           <div className="field">
-            <button type="submit" className="button is-success">Save Data</button>
+            <button type="submit" className="button is-success is-fullwidth mt-5">Save New Data</button>
+            <a href="/" className="button is-info is-fullwidth mt-3">Back to Product List</a>
           </div>
         </form>
       </div>
