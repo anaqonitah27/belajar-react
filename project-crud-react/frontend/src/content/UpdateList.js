@@ -1,17 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,useParams } from "react-router-dom";
 
-const AddList = () => {
+const UpdateList = () => {
   const [name, setName] = useState("");
   const [product, setProduct] = useState("");
   const [category, setCategory] = useState("Handphone");
   const navigate = useNavigate();
+  const {id} = useParams();
 
-  const saveProduct = async (e) => {
+  useEffect(() => {
+    getProductById()
+  }, []);
+
+  const updateProduct = async (e) => {
     e.preventDefault();
     try {
-      await axios.post(`http://localhost:3000/getproducts`, {
+      await axios.patch(`http://localhost:3000/getproducts/${id}`, {
         name,
         product,
         category,
@@ -21,12 +26,19 @@ const AddList = () => {
       console.log(error);
     }
   };
+
+  const getProductById = async () =>{
+    const response = await axios.get(`http://localhost:3000/getproducts/${id}`);
+    setName(response.data.name);
+    setProduct(response.data.product);
+    setCategory(response.data.category);
+  }
   return (
     <div className="column mt-5 is-centered">
     <p class="bd-notification is-info is-size-2 has-text-centered mb-2">React App</p>
     <p class="bd-notification is-info is-size-4 has-text-centered mb-5">CRUD - Create New Data</p>
       <div className="column is-full">
-        <form onSubmit={saveProduct}>
+        <form onSubmit={updateProduct}>
           <div className="field">
             <label className="label"> Name </label>
             <div className="control">
@@ -64,7 +76,7 @@ const AddList = () => {
             </div>
           </div>
           <div className="field">
-            <button type="submit" className="button is-success">Save Data</button>
+            <button type="submit" className="button is-success">Update Data</button>
           </div>
         </form>
       </div>
@@ -72,4 +84,4 @@ const AddList = () => {
   );
 };
 
-export default AddList;
+export default UpdateList;
