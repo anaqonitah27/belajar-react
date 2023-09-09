@@ -14,7 +14,7 @@ const ProductList = () => {
   };
 
   return (
-    <div className="column mt-5 is-center">
+    <div className="column mt-5 is-centered">
       <div className="column is-half"></div>
     <p class="bd-notification is-info is-size-2 has-text-centered mb-2">React App</p>
     <p class="bd-notification is-info is-size-4 has-text-centered mb-5">CRUD (Create, Read, Update, Delete)</p>
@@ -36,8 +36,9 @@ const ProductList = () => {
               <td className="has-text-centered">{product.product}</td>
               <td className="has-text-centered">{product.category}</td>
               <td className="has-text-centered">
-							<button className="button is-uppercase is-info mr-5">Edit</button>	
-							<button className="button is-uppercase is-danger">Delete</button>	
+							<button className="button is-uppercase tag is-medium is-warning mr-5">Create</button>	
+							<button className="button is-uppercase tag is-medium is-info mr-5">Update</button>	
+							<button className="button is-uppercase tag is-medium is-danger">Delete</button>	
 							</td>
             </tr>
           ))}
