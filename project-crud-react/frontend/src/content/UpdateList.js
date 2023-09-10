@@ -36,7 +36,7 @@ const UpdateList = () => {
   return (
     <div className="column mt-5 is-centered">
     <p class="bd-notification is-info is-size-2 has-text-centered mb-2">React App</p>
-    <p class="bd-notification is-info is-size-4 has-text-centered mb-5">CRUD - Create New Data</p>
+    <p class="bd-notification is-info is-size-4 has-text-centered mb-5">CRUD - Update Data Product By ID</p>
       <div className="column is-full">
         <form onSubmit={updateProduct}>
           <div className="field">
